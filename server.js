@@ -21,15 +21,14 @@ server.get('/api/projects', async (req, res) => {
 server.post('/api/projects', async (req, res) => {
     const body = req.body;
 
+    if (body.project_completed === 1) {
+        body.project_completed = 'true';
+    } else {
+        body.project_completed = 'false';
+    }
+    
     try {
         const newProject = await db('projects').insert(body);
-
-        // if(newProject.project_completed === 1) {
-        //     newProject.project_completed = true;
-        // } else {
-        //     newProject.project_completed = false;
-        // }
-        // console.log(newProject.project_completed)
         
         if (newProject) {
             res.status(200).json(newProject);
@@ -80,6 +79,12 @@ server.get('/api/tasks', async (req, res) => {
 
 server.post('/api/tasks', async (req, res) => {
     const body = req.body;
+
+    if (body.task_completed === 1) {
+        body.task_completed = 'true';
+    } else {
+        body.task_completed = 'false';
+    }
 
     try {
         const newTask = await db('tasks').insert(body);
