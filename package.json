@@ -1,0 +1,20 @@
+{
+  "name": "node-db-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": "https://github.com/alemasney/node-db-challenge.git",
+  "author": "Alan Lemasney <alanlemasney34@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "knex": "^0.19.2",
+    "sqlite3": "^4.1.0"
+  },
+    "devDependencies": {
+      "nodemon": "^1.19.1"
+    }
+}
